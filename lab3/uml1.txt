@@ -1,0 +1,14 @@
+@startuml
+actor "Менеджер" as owner
+boundary "Poster POS" as app
+entity "База данных" as data
+actor "Бариста" as trainee
+-> app : Бонусные баллы гостя
+app-> data : Запись бонусов на аккаунт
+data-> app : Чтение информации о бонусах
+app-> owner: Вывод инфо о бонусах
+owner-> app: Эксклюзивное предложение
+owner-> app : Формирование заказа
+app-> data : Запись заказа
+data-> trainee: Заказ на приготовление
+@enduml
